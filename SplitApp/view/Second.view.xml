@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="task2.controller.Second"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <Page title="Employee Details">
+        <content>
+            <Table
+                       items="{
+                               path : 'EmployeeModel>/Employee',
+                               sorter : {
+                               path : 'FirstName' 
+                               }
+                               }">
+                <columns>
+			        <Column>
+				        <FormattedText htmlText="Empid"/>
+			        </Column>
+					<Column>
+				        <FormattedText htmlText="FirstName"/>
+			        </Column>
+					<Column>
+				        <FormattedText htmlText="LastName"/>
+			        </Column>
+                    <Column>
+				        <FormattedText htmlText="Email"/>
+			        </Column>
+		        </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{EmployeeModel>Emp-id}"></Text>
+                            <Text text="{EmployeeModel>FirstName}"></Text>
+							<Text text="{EmployeeModel>LastName}"></Text>
+							<Text text="{EmployeeModel>Email}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

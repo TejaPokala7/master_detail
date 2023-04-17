@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="task2.controller.First"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <Page title="Employee List">
+        <content>
+                 <!-- <Input
+                value="{local>/Employees/0/FirstName}"
+                description="Hello {local>/Employees/0/FirstName}"
+                valueLiveUpdate="true"
+                width="60%"/> 
+                <Button text="{local>/Employees/0/FirstName}"></Button> -->
+            <List items="{path: 'employee>/Employees'}" >
+                <items>
+                    <StandardListItem
+                        icon="sap-icon://employee"
+                        description="{employee>FirstName}"
+				        title="{employee>Emp-id}"
+                        type="Navigation"
+                        press="onPress"
+			        />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

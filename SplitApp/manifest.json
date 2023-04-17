@@ -1,0 +1,96 @@
+{
+    "_version": "1.3.0",
+    "sap.app": {
+      "id": "task2",
+      "type": "application",
+      "i18n": "i18n/i18n.properties",
+      "title": "{{appTitle}}",
+      "description": "{{appDescription1}}",
+      "applicationVersion": {
+        "version": "1.3.0"
+      }
+    },
+    "sap.ui": {
+      "technology": "UI5",
+      "deviceTypes": {
+          "desktop": true,
+          "tablet": true,
+          "phone": true
+      }
+    },
+    "sap.ui5": {
+      "rootView": {
+          "viewName": "task2.view.App",
+          "type": "XML",
+          "id": "app"
+      },
+      "dependencies": {
+        "minUI5Version": "1.93",
+        "libs": {
+          "sap.ui.core": {},
+          "sap.m": {}
+        }
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "task2.i18n.i18n",
+            "supportedLocales": [""],
+            "fallbackLocale": ""
+          }
+        },
+          "local": {
+            "type":"sap.ui.json.JSONModel",
+            "uri":"model/employee.json"
+            }
+      },
+      "routing": {
+        "config": {
+          "routerClass": "sap.m.routing.Router",
+          "type": "View",
+          "viewType": "XML",
+          "path": "task2.view"
+        },
+        "routes": [
+          {
+            "pattern": "",
+            "name": "FirstPage",
+            "target": ["EmpList"]
+          },
+          {
+            "pattern": "EmployeeDetails",
+            "name": "SecondView",
+            "target": ["EmpList","employeeDetails"]
+          }
+        ],
+        "targets": {
+          "EmpList": {
+            "viewName": "First",
+            "viewLevel": "1",
+            "viewId": "FirstViewId",
+            "controlId": "idSplitAppControl",
+            "controlAggregation": "masterPages"
+          },
+          "employeeDetails": {
+            "viewName": "Second",
+            "viewLevel": "1",
+            "viewId": "SecondViewId",
+            "controlId": "idSplitAppControl",
+            "controlAggregation": "detailPages"
+          }
+        }
+      },
+      "resources": {
+        "css": [
+          {
+            "uri": "css/style.css"
+          }
+        ]
+      },
+      "contentDensities": {
+        "compact": true,
+        "cozy": true
+      }
+    }
+  }
