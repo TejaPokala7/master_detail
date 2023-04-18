@@ -40,9 +40,9 @@
             "fallbackLocale": ""
           }
         },
-          "local": {
+          "employee": {
             "type":"sap.ui.json.JSONModel",
-            "uri":"model/employee.json"
+            "uri":"model/local.json"
             }
       },
       "routing": {
